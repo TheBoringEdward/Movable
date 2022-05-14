@@ -10,7 +10,7 @@ public class textureDir {
                 texMap[0] = "brbrbr";
                 texMap[1] = "rbrbrb";
                 texMap[2] = "brbrbr";
-                texMap[3] = "rbrbrb";
+                texMap[3] = "rbrbrb";       // TODO: This shite
                 texMap[4] = "brbrbr";
                 texMap[5] = "rbrbrb";
             }
@@ -29,6 +29,14 @@ public class textureDir {
                 texMap[3] = "bppppb";
                 texMap[4] = "bppppb";
                 texMap[5] = "bbbbbb";
+            }
+            case '3' -> {   // Door?
+                texMap[0] = "222222";
+                texMap[1] = "232232";
+                texMap[2] = "232232";
+                texMap[3] = "232232";
+                texMap[4] = "232232";
+                texMap[5] = "222222";
             }
         }
         return texMap[i];

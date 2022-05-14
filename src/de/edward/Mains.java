@@ -1,7 +1,6 @@
 package de.edward;
 
 import de.edward.maps.mapRenderer;
-import de.edward.textures.bricktest;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +11,6 @@ public class Mains extends JFrame{
     int startX = 10; // starting position for X
     int startY = 40; // starting position for Y
 
-    bricktest bt = new bricktest();
     mapRenderer mR = new mapRenderer();
 
     public void paint(Graphics g){
