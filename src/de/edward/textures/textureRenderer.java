@@ -1,18 +1,22 @@
 package de.edward.textures;
 
 import java.awt.*;
-import javax.swing.*;
 
 public class textureRenderer {
 
-    int PosX = 100;
-    int PosY = 100;
+    int PosX;
+    int PosY;
 
-    textureMaps tM = new textureMaps();
+    public textureRenderer(int PosX, int PosY){
+        this.PosX = PosX;
+        this.PosY = PosY;
+    }
+
+    textureDir tM = new textureDir();
 
     public void drawTexture(Graphics g, char t){
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < 6; i++){
+            for (int j = 0; j < 6; j++) {
                 switch (tM.fetchTexture(t, i).charAt(j)) {
                     case 'b' -> g.setColor(Color.black);
                     case 'r' -> g.setColor(Color.red);
