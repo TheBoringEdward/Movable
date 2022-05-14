@@ -22,7 +22,7 @@ public class textureDir {
                 texMap[4] = "pbpbpb";
                 texMap[5] = "bpbpbp";
             }
-            case '2' -> { // Test Texture
+            case '2' -> { // Test Texture #2
                 texMap[0] = "bbbbbb";
                 texMap[1] = "bppppb";
                 texMap[2] = "bppppb";
@@ -37,6 +37,22 @@ public class textureDir {
                 texMap[3] = "232232";
                 texMap[4] = "232232";
                 texMap[5] = "222222";
+            }
+            case ' ' -> {   // white
+                texMap[0] = "wwwwww";
+                texMap[1] = "wwwwww";
+                texMap[2] = "wwwwww";
+                texMap[3] = "wwwwww";
+                texMap[4] = "wwwwww";
+                texMap[5] = "wwwwww";
+            }
+            case 'b' -> {   // black
+                texMap[0] = "bbbbbb";
+                texMap[1] = "bbbbbb";
+                texMap[2] = "bbbbbb";
+                texMap[3] = "bbbbbb";
+                texMap[4] = "bbbbbb";
+                texMap[5] = "bbbbbb";
             }
         }
         return texMap[i];

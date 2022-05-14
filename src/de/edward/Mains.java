@@ -8,8 +8,10 @@ import java.awt.*;
 
 public class Mains extends JFrame{
 
+    /*
     int startX = 10; // starting position for X
     int startY = 40; // starting position for Y
+     */
 
     mapRenderer mR = new mapRenderer();
 

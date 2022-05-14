@@ -24,6 +24,7 @@ public class textureRenderer {
                     case 'p' -> g.setColor(Color.decode("#ba55d3")); // purple
                     case '2' -> g.setColor(Color.decode("#a52a2a")); // dark brown
                     case '3' -> g.setColor(Color.decode("#d2691e")); // brown
+                    case 'w' -> g.setColor(Color.white);
                 }
                 g.fillRect(PosX + (5 * i), PosY + (5 * j), 5, 5);
             }
