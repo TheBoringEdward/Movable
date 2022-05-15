@@ -4,7 +4,7 @@ public class mapDir {
 
     String[] map = new String[17];
 
-    String fetchMap(String t, int i) {
+    public String fetchMap(String t, int i) {
 
         switch (t) {
             default -> { // Missing Map
@@ -27,10 +27,10 @@ public class mapDir {
                 map[16] =  "                                                                                ";
             }
             case ("1") -> { // Test
-                map[0] =   "  0102030405060708090a0b0c0d0e                                                  ";
+                map[0] =   "  0102030405060708090a0b0c0d0e0f0g0h0i0j0k0l0m0n0o0p0q                          ";
                 map[1] =   "                                                                                ";
-                map[2] =   "                                                                                ";
-                map[3] =   "    02  02                                                                      ";
+                map[2] =   "                      0j  090909  09  0n  06  05  0h                            ";
+                map[3] =   "    02  02            0k  0o0p0q  0a  0m  07  08  0i                            ";
                 map[4] =   "                                                                                ";
                 map[5] =   "  01      01                                                                    ";
                 map[6] =   "    010101                                                                      ";
@@ -44,7 +44,7 @@ public class mapDir {
                 map[14] =  "                                                                                ";
                 map[15] =  "                                                                                ";
                 map[16] =  "                                                                                ";
-            }
+            }   // TODO: Add entity-maps
             case ("EmptyDungeon") -> { // Dungeon Template
                 map[0] =   "                                                                                ";
                 map[1] =   "          0505050505050505050505050505050505050505050505050505050505            ";

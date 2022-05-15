@@ -13,9 +13,9 @@ public class Mains extends JFrame{
 
     public void paint(Graphics g){
         super.paint(g);
-        mR.drawMap(g, "EmptyDungeon");
-        //mR.drawMap(g, "1");
-        pR.drawPlayer(g, 40 + (30 * 6), 40 + (30 * 11));
+        //mR.drawMap(g, "EmptyDungeon");
+        mR.drawMap(g, "1");
+        //pR.drawPlayer(g, 40 + (30 * 6), 40 + (30 * 11));
     }
 
     public static void main(String[] args) {
