@@ -12,10 +12,13 @@ public class mapRenderer {
     textureRenderer tR = new textureRenderer(startPos, startPos);
 
     public void drawMap(Graphics g, String t) {
-        for (int i = 0; i < 40; i++) {
-            for (int j = 0; j < 17; j++) {
-                tR = new textureRenderer(startPos + (30 * i), startPos + (30 * j));
-                tR.drawTexture(g, mD.fetchMap(t, j).charAt(i));
+        for (int j = 0; j < 17; j++) {
+            int a = 0;
+            for (int i = 0; i < 80; i++) {
+                tR = new textureRenderer(startPos + (30 * a), startPos + (30 * j));
+                tR.drawTexture(g, mD.fetchMap(t, j).charAt(i), mD.fetchMap(t, j).charAt(i + 1));
+                i++;
+                a++;
             }
         }
     }
