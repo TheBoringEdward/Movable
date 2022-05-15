@@ -34,6 +34,13 @@ public class textureRenderer {
                             throw new RuntimeException(e);
                         }
                     }
+                    case '1' -> {
+                        try {
+                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/test.png"));
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
                     case '4' -> {
                         try {
                             img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/plank.png"));
@@ -65,6 +72,41 @@ public class textureRenderer {
                     case '8' -> {
                         try {
                             img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/stone-wall.png"));
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                    case '9' -> {
+                        try {
+                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-bookshelf-top.png"));
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                    case 'a' -> {
+                        try {
+                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-bookshelf.png"));
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                    case 'b' -> {
+                        try {
+                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-chest.png"));
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                    case 'c' -> {
+                        try {
+                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/left-large-chest.png"));
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                    case 'd' -> {
+                        try {
+                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/right-large-chest.png"));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
