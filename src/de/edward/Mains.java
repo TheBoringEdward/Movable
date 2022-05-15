@@ -5,7 +5,6 @@ import de.edward.maps.mapRenderer;
 import javax.swing.*;
 import java.awt.*;
 
-
 public class Mains extends JFrame{
 
     /*
@@ -17,7 +16,7 @@ public class Mains extends JFrame{
 
     public void paint(Graphics g){
         super.paint(g);
-        mR.drawMap(g, '1');
+        mR.drawMap(g, "map_EmptyDungeon");
     }
 
     public static void main(String[] args) {

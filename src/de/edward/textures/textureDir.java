@@ -38,7 +38,7 @@ public class textureDir {
                 texMap[4] = "232232";
                 texMap[5] = "222222";
             }
-            case ' ' -> {   // white
+            case 'b' -> {   // white
                 texMap[0] = "wwwwww";
                 texMap[1] = "wwwwww";
                 texMap[2] = "wwwwww";
@@ -46,13 +46,39 @@ public class textureDir {
                 texMap[4] = "wwwwww";
                 texMap[5] = "wwwwww";
             }
-            case 'b' -> {   // black
-                texMap[0] = "bbbbbb";
-                texMap[1] = "bbbbbb";
-                texMap[2] = "bbbbbb";
-                texMap[3] = "bbbbbb";
-                texMap[4] = "bbbbbb";
-                texMap[5] = "bbbbbb";
+            case ' ' -> {   // black
+                texMap[0] = "666666";
+                texMap[1] = "666666";
+                texMap[2] = "666666";
+                texMap[3] = "666666";
+                texMap[4] = "666666";
+                texMap[5] = "666666";
+            }
+
+            case '4' -> { // Plank
+                texMap[0] = "222333";
+                texMap[1] = "333222";
+                texMap[2] = "222333";
+                texMap[3] = "333222";
+                texMap[4] = "222333";
+                texMap[5] = "333222";
+            }
+
+            case '5' -> { // Stone wall
+                texMap[0] = "555555";
+                texMap[1] = "445445";
+                texMap[2] = "555555";
+                texMap[3] = "544544";
+                texMap[4] = "555555";
+                texMap[5] = "454454";
+            }
+            case '6' -> { // Brick wall
+                texMap[0] = "666666";
+                texMap[1] = "rr6rr6";
+                texMap[2] = "666666";
+                texMap[3] = "6rr6rr";
+                texMap[4] = "666666";
+                texMap[5] = "r6rr6r";
             }
         }
         return texMap[i];
