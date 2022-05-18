@@ -103,7 +103,7 @@ public class mapDir {
                 map[16] =  "                                                                                ";
             }
         }
-
+            // TODO: Mayhaps add an image scanner, such as to save maps even more easily.
 
         return map[i];
     }

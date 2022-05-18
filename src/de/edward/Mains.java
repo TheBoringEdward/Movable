@@ -13,9 +13,15 @@ public class Mains extends JFrame{
 
     public void paint(Graphics g){
         super.paint(g);
-        mR.drawMap(g, "EmptyDungeon", "testing-ent", 1);
+
+        String map = "EmptyDungeon";
+        String ent = "testing-ent";
+        // String map = "1";
+        // String ent = "1-ent";
+
+        mR.drawMap(g, map, ent, 1);
         //mR.drawMap(g, "1", "1-ent", 1);
-        //pR.drawPlayer(g, 40 + (30 * 6), 40 + (30 * 11));
+        pR.drawPlayer(g, 6, 11, map, ent);
     }
 
     public static void main(String[] args) {
