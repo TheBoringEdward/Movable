@@ -32,6 +32,6 @@ public class playerRenderer {
         g.drawImage(img, t + (30 * dir), t2, null);
         System.out.println("Amount: " + (t + (30 * dir)));
         tR = new textureRenderer(40 + (30 * 6), 40 + (30 * 11));
-        tR.drawTexture(g, mD.fetchMap("EmptyDungeon", 11).charAt(6), mD.fetchMap("EmptyDungeon", 1).charAt(6 + 1));
+        tR.drawTexture(g, mD.fetchMap("EmptyDungeon", 11).charAt(6), mD.fetchMap("EmptyDungeon", 1).charAt(6 + 1), 1);
     }
 }

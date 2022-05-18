@@ -13,8 +13,8 @@ public class Mains extends JFrame{
 
     public void paint(Graphics g){
         super.paint(g);
-        //mR.drawMap(g, "EmptyDungeon");
-        mR.drawMap(g, "1");
+        mR.drawMap(g, "EmptyDungeon", "testing-ent", 1);
+        //mR.drawMap(g, "1", "1-ent", 1);
         //pR.drawPlayer(g, 40 + (30 * 6), 40 + (30 * 11));
     }
 
@@ -25,7 +25,7 @@ public class Mains extends JFrame{
         m.setResizable(false);
         m.setTitle("Movable");
         m.setVisible(true); // There's no "paint" here!
-        System.out.println(" ----TheBoringEdward---- ");
+        System.out.println(" ----Made by TheBoringEdward with the help of some fellows---- ");
         m.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
