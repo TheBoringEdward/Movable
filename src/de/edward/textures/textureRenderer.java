@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class textureRenderer {
 
@@ -18,38 +19,38 @@ public class textureRenderer {
     }
 
 
-    public void drawTexture(Graphics g, char t, char t2, int q){
+    public void drawTexture(Graphics g, int t, int t2, int q){
         String ta = "" + t + t2;
                 switch (ta) {
                     default -> {
                         try {
-                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/missing.png"));
+                            img = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/missing.png")));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     }
-                    case "  " -> {
+                    case "00" -> {
                         try {
-                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/void.png"));
+                            img = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/void.png")));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     }
-                    case "01" -> {
+                    case "0250" -> {
                         try {
-                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/test.png"));
+                            img = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/test.png")));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     }
-                    case "02" -> {
+                    case "255255" -> {
                         try {
-                            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/reference.png"));
+                            img = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/reference.png"))); // TODO: Finish this.
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     }
-                    case "04" -> {
+                    case "105150" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/plank.png"));
@@ -64,7 +65,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "05" -> {
+                    case "145145" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/stone-brick.png"));
@@ -79,7 +80,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "06" -> {
+                    case "76201" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/upper-door.png"));
@@ -94,7 +95,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "07" -> {
+                    case "46121" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/lower-door.png"));
@@ -109,7 +110,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "08" -> {
+                    case "100100" -> {
                         if(q ==1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/stone-wall.png"));
@@ -124,7 +125,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "09" -> {
+                    case "92208" -> {
                         if(q ==1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-bookshelf-top.png"));
@@ -139,7 +140,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0a" -> {
+                    case "69146" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-bookshelf.png"));
@@ -154,7 +155,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0b" -> {
+                    case "230255" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-chest.png"));
@@ -169,7 +170,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0c" -> {
+                    case "152157" -> {
                         if(q ==1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/left-large-chest.png"));
@@ -184,7 +185,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0d" -> {
+                    case "142153" -> {
                         if(q ==1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/right-large-chest.png"));
@@ -199,14 +200,14 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0e" -> {
+                    case "1970" -> {
                         try {
                             img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/player.png"));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     }
-                    case "0f" -> {
+                    case "0203" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/blood.png"));
@@ -221,7 +222,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0g" -> {
+                    case "2034" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/coin.png"));
@@ -236,7 +237,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0h" -> {
+                    case "112203" -> {
                         if(q ==1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/brick.png"));
@@ -251,7 +252,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0i" -> {
+                    case "82149" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/brick-wall.png"));
@@ -266,7 +267,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0j" -> {
+                    case "0217" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-flame.png"));
@@ -281,7 +282,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0k" -> {
+                    case "693" -> {
                         if(q ==1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/torch-holder-lit.png"));
@@ -296,7 +297,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0l" -> {
+                    case "6106" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/torch-holder-unlit.png"));
@@ -311,7 +312,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0m" -> {
+                    case "13580" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/pedestal-lower.png"));
@@ -326,7 +327,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0n" -> {
+                    case "163132" -> {
                         if(q ==1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/pedestal-upper.png"));
@@ -341,7 +342,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0o" -> {
+                    case "6242" -> {
                         if(q ==1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/left-bookshelf.png"));
@@ -356,7 +357,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0p" -> {
+                    case "107109" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/mid-bookshelf.png"));
@@ -371,7 +372,7 @@ public class textureRenderer {
                             }
                         }
                     }
-                    case "0q" -> {
+                    case "164166" -> {
                         if(q == 1) {
                             try {
                                 img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/right-bookshelf.png"));
@@ -390,13 +391,13 @@ public class textureRenderer {
                 g.drawImage(img, PosX, PosY, null);
     }
 
-    public void drawEntity(Graphics g, char t, char t2, int q){
+    public void drawEntity(Graphics g, int t, int t2, int q){
         String ta = "" + t + t2;
         switch (ta) {
             default -> {
                 // Ignore
             }
-            case "0a" -> {
+            case "69146" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-bookshelf.png"));
@@ -412,7 +413,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "06" -> {
+            case "76201" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/upper-door.png"));
@@ -428,7 +429,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "07" -> {
+            case "46121" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/lower-door.png"));
@@ -444,7 +445,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "09" -> {
+            case "92208" -> {
                 if(q ==1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-bookshelf-top.png"));
@@ -460,7 +461,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0b" -> {
+            case "230255" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-chest.png"));
@@ -476,7 +477,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY - 15, null);
             }
-            case "0c" -> {
+            case "152157" -> {
                 if(q ==1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/left-large-chest.png"));
@@ -492,7 +493,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY - 15, null);
             }
-            case "0d" -> {
+            case "142153" -> {
                 if(q ==1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/right-large-chest.png"));
@@ -508,7 +509,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY - 15, null);
             }
-            case "0e" -> {
+            case "1970" -> {
                 try {
                     img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/player.png"));
                 } catch (IOException e) {
@@ -516,7 +517,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0f" -> {
+            case "0203" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/blood.png"));
@@ -532,7 +533,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0g" -> {
+            case "2034" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/coin.png"));
@@ -548,7 +549,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0j" -> {
+            case "0217" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/small-flame.png"));
@@ -564,7 +565,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0k" -> {
+            case "693" -> {
                 if(q ==1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/torch-holder-lit.png"));
@@ -580,7 +581,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0l" -> {
+            case "6106" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/torch-holder-unlit.png"));
@@ -596,7 +597,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0m" -> {
+            case "13580" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/pedestal-lower.png"));
@@ -612,7 +613,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0n" -> {
+            case "163132" -> {
                 if(q ==1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/pedestal-upper.png"));
@@ -628,7 +629,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0o" -> {
+            case "6242" -> {
                 if(q ==1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/left-bookshelf.png"));
@@ -644,7 +645,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0p" -> {
+            case "107109" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/mid-bookshelf.png"));
@@ -660,7 +661,7 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-            case "0q" -> {
+            case "164166" -> {
                 if(q == 1) {
                     try {
                         img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/right-bookshelf.png"));
@@ -676,7 +677,6 @@ public class textureRenderer {
                 }
                 g.drawImage(img, PosX, PosY, null);
             }
-
         }   //  It's shit, I know...
     }
 

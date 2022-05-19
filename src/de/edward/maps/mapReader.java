@@ -8,9 +8,10 @@ import java.util.Objects;
 
 public class mapReader {
 
-    BufferedImage img = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/untitled_map.png")));
+    BufferedImage img;
 
-    public mapReader() throws IOException {
+    public mapReader(String map) throws IOException {
+        img = ImageIO.read(Objects.requireNonNull(getClass().getResource(map)));
     }
 
     public void showTextureColour(int x, int y){
@@ -24,4 +25,20 @@ public class mapReader {
         System.out.println(blue + " blue");
         System.out.println(alpha + " alpha");
     }
+
+    public int greenAmount(int x, int y){
+        final Color colour = new Color(img.getRGB(x,y), true);
+        return colour.getGreen();
+    }
+
+    public int redAmount(int x, int y){
+        final Color colour = new Color(img.getRGB(x,y), true);
+        return colour.getRed();
+    }
+
+    public int blueAmount(int x, int y){
+        final Color colour = new Color(img.getRGB(x,y), true);
+        return colour.getBlue();
+    }
+
 }
