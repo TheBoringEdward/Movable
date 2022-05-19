@@ -1,15 +1,26 @@
 package de.edward;
 
+import de.edward.maps.mapReader;
 import de.edward.maps.mapRenderer;
 import de.edward.player.playerRenderer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class Mains extends JFrame{
 
     mapRenderer mR = new mapRenderer();
     playerRenderer pR = new playerRenderer();
+    mapReader mRe;
+
+    {
+        try {
+            mRe = new mapReader();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void paint(Graphics g){
         super.paint(g);
@@ -21,7 +32,8 @@ public class Mains extends JFrame{
 
         mR.drawMap(g, map, ent, 1);
         //mR.drawMap(g, "1", "1-ent", 1);
-        pR.drawPlayer(g, 6, 11, map, ent);
+        //pR.drawPlayer(g, 6, 11, map, ent);
+        mRe.showTextureColour( 2, 0);
     }
 
     public static void main(String[] args) {
