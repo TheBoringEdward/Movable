@@ -14,7 +14,7 @@ public class mapReader {
         img = ImageIO.read(Objects.requireNonNull(getClass().getResource(map)));
     }
 
-    public void showTextureColour(int x, int y){
+    public void showTextureColour(int x, int y){ // For the purpose of adding new textures
         final Color colour = new Color(img.getRGB(x,y), true);
         final int red = colour.getRed();
         final int green = colour.getGreen();

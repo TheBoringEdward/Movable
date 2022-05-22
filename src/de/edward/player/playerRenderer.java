@@ -31,7 +31,7 @@ public class playerRenderer {
         }
     }
 
-    public void drawPlayer(Graphics g, int t, int t2, String map, String ent, int q){
+    public void drawPlayer(Graphics g, int t, int t2, String map, String ent){
 
         try {
             mRT = new mapReader(map);
@@ -57,8 +57,8 @@ public class playerRenderer {
         System.out.println("Amount: " + (t + (30 * dir)));
 
         tR = new textureRenderer(x, y);
-        tR.drawTexture(g, mRT.greenAmount(t, t2), mRT.redAmount(t, t2), q); // Redraws map texture
-        tR.drawEntity(g, mRE.greenAmount(t, t2), mRE.redAmount(t, t2), q); // Redraws possible entity
+        tR.drawTexture(g, mRT.greenAmount(t, t2), mRT.redAmount(t, t2), 't'); // Redraws map texture
+        tR.drawTexture(g, mRE.greenAmount(t, t2), mRE.redAmount(t, t2), 'e'); // Redraws possible entity
         // TODO: This has to be improved.
     }
 }
