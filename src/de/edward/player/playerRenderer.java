@@ -1,13 +1,14 @@
 package de.edward.player;
 
 import de.edward.maps.mapReader;
-import de.edward.textures.textureRenderer;
+import de.edward.objects.textureLoader;
+import de.edward.objects.textureRenderer;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class playerRenderer {
@@ -40,14 +41,10 @@ public class playerRenderer {
             throw new RuntimeException(e);
         }
 
-        x = 40 + (30 * t); // x
-        y = 40 + (30 * t2); // y
+        x = 40 + (30 * t);
+        y = 40 + (30 * t2);
 
-        try {
-            img = ImageIO.read(new File("/home/edward/IdeaProjects/Movable/src/de/edward/textures/player.png"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        img = textureLoader.player;
         g.drawImage(img, x, y, null);
 
         System.out.println("Amount:");

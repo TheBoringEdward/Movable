@@ -20,8 +20,8 @@ public class mapReader {
         final int green = colour.getGreen();
         final int blue = colour.getBlue();
         final int alpha = colour.getAlpha();
-        System.out.println(red + " red");
         System.out.println(green + " green");
+        System.out.println(red + " red");
         System.out.println(blue + " blue");
         System.out.println(alpha + " alpha");
     }
@@ -34,11 +34,6 @@ public class mapReader {
     public int redAmount(int x, int y){
         final Color colour = new Color(img.getRGB(x,y), true);
         return colour.getRed();
-    }
-
-    public int blueAmount(int x, int y){
-        final Color colour = new Color(img.getRGB(x,y), true);
-        return colour.getBlue();
     }
 
 }

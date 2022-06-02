@@ -1,6 +1,6 @@
 package de.edward.maps;
 
-import de.edward.textures.textureRenderer;
+import de.edward.objects.textureRenderer;
 
 import java.awt.*;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class mapRenderer {
 
     public void drawMap(Graphics g, String map, String ent, String border) {
 
-        g.setColor(Color.decode("#101728")); // This is how I have to change the background colour from now on.
+        g.setColor(Color.decode("#101728")); // Doesn't always fill the entire window somehow. I hate JFrame.
         g.fillRect(-10,-10,1940,2000);
 
         try {
