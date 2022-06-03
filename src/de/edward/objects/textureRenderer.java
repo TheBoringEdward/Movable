@@ -1,10 +1,7 @@
 package de.edward.objects;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.util.Objects;
 
 public class textureRenderer {
 
@@ -18,18 +15,18 @@ public class textureRenderer {
     }
 
 
-    public void drawTexture(Graphics g, int t, int t2, char m) {
+    public void drawTexture(Graphics g, int t, int t2, Boolean m) {
         String ta = "" + t + t2;
         switch (ta) {
-            default -> { // missing
-                img = textureLoader.missing;
-                g.drawImage(img, PosX, PosY, null);
-            }
             case "00" -> { // void
-                if (m != 'e') {
+                if (m) {
                     img = textureLoader.the_void;
                     g.drawImage(img, PosX, PosY, null);
                 }
+            }
+            default -> { // missing
+                img = textureLoader.missing;
+                g.drawImage(img, PosX, PosY, null);
             }
             case "0250" -> { // test
                 img = textureLoader.test;

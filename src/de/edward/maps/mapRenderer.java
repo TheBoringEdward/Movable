@@ -14,6 +14,8 @@ public class mapRenderer {
     mapReader mRE;
     mapReader mRB;
 
+    // To be replaced
+
     {
         try {
             mRT = new mapReader("");
@@ -40,9 +42,9 @@ public class mapRenderer {
         for (int j = 0; j < 17; j++) {
             for (int i = 0; i < 40; i++) {
                 tR = new textureRenderer(startPos + (30 * i), startPos + (30 * j));
-                tR.drawTexture(g, mRT.greenAmount(i, j), mRT.redAmount(i, j), 't');
-                tR.drawTexture(g, mRE.greenAmount(i, j), mRE.redAmount(i, j), 'e');
-                tR.drawTexture(g, mRB.greenAmount(i, j), mRB.redAmount(i, j), 'e');
+                tR.drawTexture(g, mRT.greenAmount(i, j), mRT.redAmount(i, j), true);
+                tR.drawTexture(g, mRE.greenAmount(i, j), mRE.redAmount(i, j), false);
+                tR.drawTexture(g, mRB.greenAmount(i, j), mRB.redAmount(i, j), false);
             }
         }
     }

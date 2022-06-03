@@ -4,14 +4,12 @@ import de.edward.maps.mapReader;
 import de.edward.objects.textureLoader;
 import de.edward.objects.textureRenderer;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.Objects;
 import java.util.Scanner;
 
-public class playerRenderer {
+public class playerRenderer{
 
     BufferedImage img;
     Scanner scn2 = new Scanner(System.in);
@@ -20,19 +18,10 @@ public class playerRenderer {
     int y;
     int x;
 
-    mapReader mRT;
-    mapReader mRE;
-
-    {
-        try {
-            mRT = new mapReader("");
-            mRE = new mapReader("");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public void drawPlayer(Graphics g, int t, int t2, String map, String ent){
+
+        mapReader mRT;
+        mapReader mRE;
 
         try {
             mRT = new mapReader(map);
@@ -54,8 +43,8 @@ public class playerRenderer {
         System.out.println("Amount: " + (t + (30 * dir)));
 
         tR = new textureRenderer(x, y);
-        tR.drawTexture(g, mRT.greenAmount(t, t2), mRT.redAmount(t, t2), 't'); // Redraws map texture
-        tR.drawTexture(g, mRE.greenAmount(t, t2), mRE.redAmount(t, t2), 'e'); // Redraws possible entity
+        tR.drawTexture(g, mRT.greenAmount(t, t2), mRT.redAmount(t, t2), true); // Redraws map texture
+        tR.drawTexture(g, mRE.greenAmount(t, t2), mRE.redAmount(t, t2), false); // Redraws possible entity
         // TODO: This has to be improved.
     }
 }
