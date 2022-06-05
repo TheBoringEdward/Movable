@@ -18,14 +18,14 @@ public class playerRenderer{
     int y;
     int x;
 
-    public void drawPlayer(Graphics g, int t, int t2, String map, String ent){
+    public void drawPlayer(Graphics g, int t, int t2, String background, String objects){
 
         mapReader mRT;
         mapReader mRE;
 
         try {
-            mRT = new mapReader(map);
-            mRE = new mapReader(ent);
+            mRT = new mapReader(background);
+            mRE = new mapReader(objects);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

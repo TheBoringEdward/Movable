@@ -15,6 +15,7 @@ public class mapRenderer {
     mapReader mRB;
 
     // To be replaced
+    // TODO: Use "mapLoader" and "repaint" for the "playerRenderer"
 
     {
         try {
@@ -26,14 +27,14 @@ public class mapRenderer {
         }
     }
 
-    public void drawMap(Graphics g, String map, String ent, String border) {
+    public void drawMap(Graphics g, String background, String objects, String border) {
 
         g.setColor(Color.decode("#101728")); // Doesn't always fill the entire window somehow. I hate JFrame.
-        g.fillRect(-10,-10,1940,2000);
+        g.fillRect(-10,-10,2000,2000);
 
         try {
-            mRT = new mapReader(map);
-            mRE = new mapReader(ent);
+            mRT = new mapReader(background);
+            mRE = new mapReader(objects);
             mRB = new mapReader(border);
         } catch (IOException e) {
             throw new RuntimeException(e);
