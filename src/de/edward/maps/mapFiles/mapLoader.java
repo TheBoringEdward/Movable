@@ -12,6 +12,7 @@ public class mapLoader {
     public static BufferedImage tallLibraryEDMap;
     public static BufferedImage testingEDMap;
     public static BufferedImage oneMap;
+    public static BufferedImage awaitingInp;
 
     mapReader EmptyDungeonBGMapReader;
     mapReader oneMapBGMapReader;
@@ -47,12 +48,15 @@ public class mapLoader {
                 tR.drawTexture(tallLibraryEDMapGraphics, EmptyDungeonBGMapReader.greenAmount(i, j), EmptyDungeonBGMapReader.redAmount(i, j), true);
                 tR.drawTexture(tallLibraryEDMapGraphics, tallLibraryEDMapReader.greenAmount(i, j), tallLibraryEDMapReader.redAmount(i, j), false);
                 tR.drawTexture(tallLibraryEDMapGraphics, border.greenAmount(i, j), border.redAmount(i, j), false);
-            }
+            } // Due to aesthetic reasons, there should be a possibility to place multiple entities over each other, i.e. create multiple entity maps for singular map
         }
+        tallLibraryEDMapGraphics.setFont(new Font("TimesRoman", Font.PLAIN, 50));
+        tallLibraryEDMapGraphics.setColor(Color.decode("#d59b00"));
+        tallLibraryEDMapGraphics.drawString("GUI elements coming soon", 400,700);
 
         testingEDMap = new BufferedImage(1600, 900, BufferedImage.TYPE_INT_RGB);
         final Graphics2D testingEDMapGraphics = testingEDMap.createGraphics();
-        testingEDMapGraphics.setColor(Color.decode("#101728")); // Doesn't always fill the entire window somehow. I hate JFrame.
+        testingEDMapGraphics.setColor(Color.decode("#101728"));
         testingEDMapGraphics.fillRect(-10,-10,2000,2000);
         for (int j = 0; j < 17; j++) {
             for (int i = 0; i < 40; i++) {
@@ -62,10 +66,13 @@ public class mapLoader {
                 tR.drawTexture(testingEDMapGraphics, border.greenAmount(i, j), border.redAmount(i, j), false);
             }
         }
+        testingEDMapGraphics.setFont(new Font("TimesRoman", Font.PLAIN, 50));
+        testingEDMapGraphics.setColor(Color.decode("#d59b00"));
+        testingEDMapGraphics.drawString("GUI elements coming soon", 400,700);
 
         oneMap = new BufferedImage(1600, 900, BufferedImage.TYPE_INT_RGB);
         final Graphics2D oneMapGraphics = oneMap.createGraphics();
-        oneMapGraphics.setColor(Color.decode("#101728")); // Doesn't always fill the entire window somehow. I hate JFrame.
+        oneMapGraphics.setColor(Color.decode("#101728"));
         oneMapGraphics.fillRect(-10,-10,2000,2000);
         for (int j = 0; j < 17; j++) {
             for (int i = 0; i < 40; i++) {
@@ -75,7 +82,16 @@ public class mapLoader {
                 tR.drawTexture(oneMapGraphics, border.greenAmount(i, j), border.redAmount(i, j), false);
             }
         }
-        
-    }
+        oneMapGraphics.setFont(new Font("TimesRoman", Font.PLAIN, 50));
+        oneMapGraphics.setColor(Color.decode("#d59b00"));
+        oneMapGraphics.drawString("GUI elements coming soon", 400,700);
 
+        awaitingInp = new BufferedImage(1600, 900, BufferedImage.TYPE_INT_RGB);
+        final Graphics2D awaitingInpGraphics = awaitingInp.createGraphics();
+        awaitingInpGraphics.setColor(Color.decode("#101728"));
+        awaitingInpGraphics.fillRect(-10,-10,2000,2000);
+        awaitingInpGraphics.setFont(new Font("TimesRoman", Font.PLAIN, 50));
+        awaitingInpGraphics.setColor(Color.decode("#d59b00"));
+        awaitingInpGraphics.drawString("Awaiting input...", 550,450);
+    } // This is messy
 }

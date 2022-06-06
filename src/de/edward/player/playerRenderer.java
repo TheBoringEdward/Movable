@@ -1,50 +1,36 @@
 package de.edward.player;
 
-import de.edward.maps.mapReader;
+import de.edward.maps.mapFiles.mapLoader;
 import de.edward.objects.textureLoader;
-import de.edward.objects.textureRenderer;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class playerRenderer{
 
     BufferedImage img;
     Scanner scn2 = new Scanner(System.in);
-    textureRenderer tR = new textureRenderer(40, 40);
 
     int y;
     int x;
 
-    public void drawPlayer(Graphics g, int t, int t2, String background, String objects){
+    public void drawPlayer(Graphics g, int t, int t2, BufferedImage map){
 
-        mapReader mRT;
-        mapReader mRE;
-
-        try {
-            mRT = new mapReader(background);
-            mRE = new mapReader(objects);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        mapLoader mL = new mapLoader(40);
 
         x = 40 + (30 * t);
         y = 40 + (30 * t2);
 
         img = textureLoader.player;
-        g.drawImage(img, x, y, null);
+        g.drawImage(img, x, y, null); // Draws player at starting position
 
-        System.out.println("Amount:");
+        System.out.println("Choose an amount:");
         int dir = scn2.nextInt();
         System.out.println(x);
+        g.drawImage(map, 0, 0, null); // Redraws map
         g.drawImage(img, x + (30 * dir), y, null); // Draws the player on new position
-        System.out.println("Amount: " + (t + (30 * dir)));
-
-        tR = new textureRenderer(x, y);
-        tR.drawTexture(g, mRT.greenAmount(t, t2), mRT.redAmount(t, t2), true); // Redraws map texture
-        tR.drawTexture(g, mRE.greenAmount(t, t2), mRE.redAmount(t, t2), false); // Redraws possible entity
+        System.out.println("Chosen amount: " + (t + (30 * dir)));
         // TODO: This has to be improved.
     }
 }

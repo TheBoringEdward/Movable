@@ -14,8 +14,7 @@ public class mapRenderer {
     mapReader mRE;
     mapReader mRB;
 
-    // To be replaced
-    // TODO: Use "mapLoader" and "repaint" for the "playerRenderer"
+    // TODO: Check if this class is used anywhere. To be deleted.
 
     {
         try {
