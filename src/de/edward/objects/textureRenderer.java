@@ -66,15 +66,15 @@ public class textureRenderer {
             }
             case "230255" -> { // small-chest
                 img = textureLoader.small_chest;
-                g.drawImage(img, PosX, PosY, null);
+                g.drawImage(img, PosX, PosY-15, null);
             }
             case "152157" -> { // left-large-chest
                 img = textureLoader.left_chest;
-                g.drawImage(img, PosX, PosY, null);
+                g.drawImage(img, PosX, PosY-15, null);
             }
             case "142153" -> { // right-large-chest
                 img = textureLoader.right_chest;
-                g.drawImage(img, PosX, PosY, null);
+                g.drawImage(img, PosX, PosY-15, null);
             }
             case "1970" -> { // player
                 img = textureLoader.player;
@@ -158,6 +158,10 @@ public class textureRenderer {
             }
             case "13566" -> { // border_b
                 img = textureLoader.border_b;
+                g.drawImage(img, PosX, PosY, null);
+            }
+            case "300" -> {
+                img = textureLoader.sword;
                 g.drawImage(img, PosX, PosY, null);
             }
         }

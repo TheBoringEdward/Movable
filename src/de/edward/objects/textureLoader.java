@@ -41,6 +41,7 @@ public class textureLoader {
     public static BufferedImage torch_holder_lit;
     public static BufferedImage torch_holder_unlit;
     public static BufferedImage upper_door;
+    public static BufferedImage sword;
 
     public void loadTextures (){
         try {
@@ -79,6 +80,7 @@ public class textureLoader {
             torch_holder_unlit = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/torch-holder-unlit.png")));
             upper_door = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/upper-door.png")));
             the_void = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/void.png")));
+            sword = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/sword.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

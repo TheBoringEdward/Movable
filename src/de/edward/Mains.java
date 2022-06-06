@@ -21,8 +21,8 @@ public class Mains extends JFrame{
     public void paint(Graphics g){
         super.paint(g);
 
-        System.out.println("1 for tallLibraryED, 2 for testingED, 3 for one");
-        g.drawImage(mapLoader.awaitingInp, 0, 0, null);
+        System.out.println("1 for tallLibraryED, 2 for testingED, 3 for one, 4 for lootRoomED");
+        g.drawImage(mapLoader.awaitingInput, 0, 0, null);
         int q = scn2.nextInt();
         switch(q){
             default -> System.out.println("Invalid option");
@@ -37,6 +37,10 @@ public class Mains extends JFrame{
             case 3 -> {
                 g.drawImage(mapLoader.oneMap, 0, 10, null);
                 pR.drawPlayer(g, 6, 12, mapLoader.oneMap);
+            }
+            case 4 -> {
+                g.drawImage(mapLoader.lootRoomEDMap, 0, 10, null);
+                pR.drawPlayer(g, 6, 7, mapLoader.lootRoomEDMap);
             }
         }
     }
