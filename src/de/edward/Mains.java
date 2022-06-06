@@ -27,15 +27,15 @@ public class Mains extends JFrame{
         switch(q){
             default -> System.out.println("Invalid option");
             case 1 -> {
-                g.drawImage(mapLoader.tallLibraryEDMap, 0, 0, null);
+                g.drawImage(mapLoader.tallLibraryEDMap, 0, 10, null);
                 pR.drawPlayer(g, 6, 12, mapLoader.tallLibraryEDMap);
             }
             case 2 -> {
-                g.drawImage(mapLoader.testingEDMap, 0, 0, null);
+                g.drawImage(mapLoader.testingEDMap, 0, 10, null);
                 pR.drawPlayer(g, 6, 12, mapLoader.testingEDMap);
             }
             case 3 -> {
-                g.drawImage(mapLoader.oneMap, 0, 0, null);
+                g.drawImage(mapLoader.oneMap, 0, 10, null);
                 pR.drawPlayer(g, 6, 12, mapLoader.oneMap);
             }
         }

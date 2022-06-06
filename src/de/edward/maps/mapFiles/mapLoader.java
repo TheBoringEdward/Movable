@@ -21,54 +21,76 @@ public class mapLoader {
     mapReader oneMapReader;
     mapReader border;
 
+    textureRenderer tR;
+
     {
         try {
             EmptyDungeonBGMapReader = new mapReader("/de/edward/maps/mapFiles/EmptyDungeon_map.png");
+            oneMapBGMapReader = new mapReader("/de/edward/maps/mapFiles/1_map.png");
+            border = new mapReader("/de/edward/maps/mapFiles/border.png");
+
             tallLibraryEDMapReader = new mapReader("/de/edward/maps/mapFiles/tall-library-ED_map.png");
             testingEDMapReader = new mapReader("/de/edward/maps/mapFiles/testing-ED_map.png");
             oneMapReader = new mapReader( "/de/edward/maps/mapFiles/1-ent_map.png");
-            oneMapBGMapReader = new mapReader("/de/edward/maps/mapFiles/1_map.png");
-            border = new mapReader("/de/edward/maps/mapFiles/border.png");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-    
-    public mapLoader(int startPos){
 
-        textureRenderer tR;
+    private void GUI_soon(Graphics2D g){
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 50));
+        g.setColor(Color.decode("#d59b00"));
+        g.drawString("GUI elements coming soon", 400,700);
+    }
+
+    private void drawEDBackground(Graphics2D g, int startPos){
+        for (int j = 0; j < 17; j++) {
+            for (int i = 0; i < 40; i++) {
+                tR = new textureRenderer(startPos + (30 * i), startPos + (30 * j));
+                tR.drawTexture(g, EmptyDungeonBGMapReader.greenAmount(i, j), EmptyDungeonBGMapReader.redAmount(i, j), true);
+            }
+        }
+    }
+
+    private void drawBorder(Graphics2D g, int startPos){
+        for (int j = 0; j < 17; j++) {
+            for (int i = 0; i < 40; i++) {
+                tR = new textureRenderer(startPos + (30 * i), startPos + (30 * j));
+                tR.drawTexture(g, border.greenAmount(i, j), border.redAmount(i, j), false);
+            }
+        }
+    }
+
+
+    public mapLoader(int startPos){
         
         tallLibraryEDMap = new BufferedImage(1600, 900, BufferedImage.TYPE_INT_RGB);
         final Graphics2D tallLibraryEDMapGraphics = tallLibraryEDMap.createGraphics();
         tallLibraryEDMapGraphics.setColor(Color.decode("#101728")); // Doesn't always fill the entire window somehow. I hate JFrame.
         tallLibraryEDMapGraphics.fillRect(-10,-10,2000,2000);
+        drawEDBackground(tallLibraryEDMapGraphics, startPos);
         for (int j = 0; j < 17; j++) {
             for (int i = 0; i < 40; i++) {
                 tR = new textureRenderer(startPos + (30 * i), startPos + (30 * j));
-                tR.drawTexture(tallLibraryEDMapGraphics, EmptyDungeonBGMapReader.greenAmount(i, j), EmptyDungeonBGMapReader.redAmount(i, j), true);
                 tR.drawTexture(tallLibraryEDMapGraphics, tallLibraryEDMapReader.greenAmount(i, j), tallLibraryEDMapReader.redAmount(i, j), false);
-                tR.drawTexture(tallLibraryEDMapGraphics, border.greenAmount(i, j), border.redAmount(i, j), false);
             } // Due to aesthetic reasons, there should be a possibility to place multiple entities over each other, i.e. create multiple entity maps for singular map
         }
-        tallLibraryEDMapGraphics.setFont(new Font("TimesRoman", Font.PLAIN, 50));
-        tallLibraryEDMapGraphics.setColor(Color.decode("#d59b00"));
-        tallLibraryEDMapGraphics.drawString("GUI elements coming soon", 400,700);
+        drawBorder(tallLibraryEDMapGraphics, startPos);
+        GUI_soon(tallLibraryEDMapGraphics);
 
         testingEDMap = new BufferedImage(1600, 900, BufferedImage.TYPE_INT_RGB);
         final Graphics2D testingEDMapGraphics = testingEDMap.createGraphics();
         testingEDMapGraphics.setColor(Color.decode("#101728"));
         testingEDMapGraphics.fillRect(-10,-10,2000,2000);
+        drawEDBackground(testingEDMapGraphics, startPos);
         for (int j = 0; j < 17; j++) {
             for (int i = 0; i < 40; i++) {
                 tR = new textureRenderer(startPos + (30 * i), startPos + (30 * j));
-                tR.drawTexture(testingEDMapGraphics, EmptyDungeonBGMapReader.greenAmount(i, j), EmptyDungeonBGMapReader.redAmount(i, j), true);
                 tR.drawTexture(testingEDMapGraphics, testingEDMapReader.greenAmount(i, j), testingEDMapReader.redAmount(i, j), false);
-                tR.drawTexture(testingEDMapGraphics, border.greenAmount(i, j), border.redAmount(i, j), false);
             }
         }
-        testingEDMapGraphics.setFont(new Font("TimesRoman", Font.PLAIN, 50));
-        testingEDMapGraphics.setColor(Color.decode("#d59b00"));
-        testingEDMapGraphics.drawString("GUI elements coming soon", 400,700);
+        drawBorder(testingEDMapGraphics, startPos);
+        GUI_soon(testingEDMapGraphics);
 
         oneMap = new BufferedImage(1600, 900, BufferedImage.TYPE_INT_RGB);
         final Graphics2D oneMapGraphics = oneMap.createGraphics();
@@ -79,12 +101,10 @@ public class mapLoader {
                 tR = new textureRenderer(startPos + (30 * i), startPos + (30 * j));
                 tR.drawTexture(oneMapGraphics, oneMapBGMapReader.greenAmount(i, j), oneMapBGMapReader.redAmount(i, j), true);
                 tR.drawTexture(oneMapGraphics, oneMapReader.greenAmount(i, j), oneMapReader.redAmount(i, j), false);
-                tR.drawTexture(oneMapGraphics, border.greenAmount(i, j), border.redAmount(i, j), false);
             }
         }
-        oneMapGraphics.setFont(new Font("TimesRoman", Font.PLAIN, 50));
-        oneMapGraphics.setColor(Color.decode("#d59b00"));
-        oneMapGraphics.drawString("GUI elements coming soon", 400,700);
+        drawBorder(oneMapGraphics, startPos);
+        GUI_soon(oneMapGraphics);
 
         awaitingInp = new BufferedImage(1600, 900, BufferedImage.TYPE_INT_RGB);
         final Graphics2D awaitingInpGraphics = awaitingInp.createGraphics();
