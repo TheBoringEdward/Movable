@@ -47,7 +47,7 @@ public class Mains extends JFrame{
         m.setSize(1600, 900);
         m.setBackground(Color.black); // Check "mapLoader" for changing background
         m.setResizable(false);
-        m.setTitle("Movable - Alpha - map fiddeling");
+        m.setTitle("Movable - Alpha - master");
         m.setVisible(true); // As it seems, there is no control over when the "paint" method gets called. fml
         System.out.println(" ----Made by TheBoringEdward with the great help of some fellows---- ");
         m.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
