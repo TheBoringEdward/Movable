@@ -1,36 +1,37 @@
 package de.edward.player;
 
-import de.edward.maps.mapFiles.mapLoader;
 import de.edward.objects.textureLoader;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Scanner;
 
-public class playerRenderer{
+public class playerRenderer {
 
+    private int PosX;
+    private int PosY;
     BufferedImage img;
-    Scanner scn2 = new Scanner(System.in);
+    BufferedImage map;
 
-    int y;
-    int x;
-
-    public void drawPlayer(Graphics g, int t, int t2, BufferedImage map){
-
-        mapLoader mL = new mapLoader(40);
-
-        x = 40 + (30 * t);
-        y = 40 + (30 * t2);
-
-        img = textureLoader.player;
-        g.drawImage(img, x, y, null); // Draws player at starting position
-
-        System.out.println("Choose an amount:");
-        int dir = scn2.nextInt();
-        System.out.println(x);
-        g.drawImage(map, 0, 0, null); // Redraws map
-        g.drawImage(img, x + (30 * dir), y, null); // Draws the player on new position
-        System.out.println("Chosen amount: " + (t + (30 * dir)));
-        // TODO: This has to be improved.
+    public playerRenderer(int PosX, int PosY, BufferedImage map){
+        this.PosX = 40 + (30 * PosX);
+        this.PosY = 40 + (30 * PosY);
+        this.map = map;
     }
+
+    public void draw(Graphics2D g){
+        img = textureLoader.player;
+        g.drawImage(img, PosX, PosY, null);
+    }
+
+    public void hide(Graphics2D g){
+        g.drawImage(map, 0, 0, null);
+    }
+
+    public void move(Graphics2D g, int moveX, int moveY){
+        hide(g);
+        PosX = PosX + (30 * moveX);
+        PosY = PosY + (30 * moveY);
+        draw(g);
+    }
+
 }

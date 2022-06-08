@@ -42,6 +42,8 @@ public class mapLoader {
 
     private void GUI_soon(Graphics2D g){
         g.setFont(new Font("TimesRoman", Font.PLAIN, 50));
+        g.setColor(Color.decode("#775b24"));
+        g.drawString("GUI elements coming soon", 397,703);
         g.setColor(Color.decode("#d59b00"));
         g.drawString("GUI elements coming soon", 400,700);
     }
@@ -100,6 +102,8 @@ public class mapLoader {
         awaitingInputGraphics.setColor(Color.decode("#101728"));
         awaitingInputGraphics.fillRect(-10,-10,2000,2000);
         awaitingInputGraphics.setFont(new Font("TimesRoman", Font.PLAIN, 50));
+        awaitingInputGraphics.setColor(Color.decode("#775b24"));
+        awaitingInputGraphics.drawString("Awaiting input...", 547,453);
         awaitingInputGraphics.setColor(Color.decode("#d59b00"));
         awaitingInputGraphics.drawString("Awaiting input...", 550,450);
 

@@ -72,7 +72,7 @@ public class textureLoader {
             bookshelf = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/small-bookshelf.png")));
             bookshelf_top = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/small-bookshelf-top.png")));
             small_chest = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/small-chest.png")));
-            small_flame = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/small-flame.png")));
+            small_flame = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/small-flame-a.gif")));
             stone_brick = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/stone-brick.png")));
             stone_wall = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/stone-wall.png")));
             test = ImageIO.read(Objects.requireNonNull(getClass().getResource("/de/edward/textures/test.png")));
